@@ -7,3 +7,57 @@ print(database)
 
 sb.catplot(x="month",y="passengers",data=database, kind="box") #violon
 plt.show()
+
+##rascunho
+
+#######MAIN.PY
+# site com os scripts https://cdnjs.com
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# criar a nossa 1ª pagina = 1ª rota
+@app.route("/")
+def homepage():
+    return render_template("homepage.html")
+
+# roda o nosso aplicativo
+
+app.run()
+
+# websocket
+
+#######HOMEPAGE.HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+# websocket
+# jquery -> javascript
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Hashzap</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js" integrity="sha512-Z6C1p1NIexPj5MsVUunW4pg7uMX6/TT3CUVldmjXx2kpip1eZcrAnxIusDxyFIikyM9A61zOVNgvLr/TGudOQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+
+</head>
+<body>
+
+   <h1>Hashzap</h1>
+
+   <div id="lista_mensagens">
+        <P>Lira: Coe galera</P>
+        <p>Renaaaaaaaa</p>
+   </div>
+
+   <input type="text" id="usuario" placeholder="Usuario" required>
+   <input type="text" id="mensagem" placeholder="mensagem" required>
+
+   <button id="botão">Enviar</button>
+
+</body>
+</html>
